@@ -1,0 +1,28 @@
+body {
+    width: 100%;
+}
+
+.divider {
+    height: 100px;
+}
+
+.tabList {
+    margin-top: 50px;
+    display: flex;
+    text-align: center;
+}
+
+.tab {
+    flex-grow: 1;
+    line-height: 50px;
+    margin: 0 5px;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.tab:hover {
+    cursor: pointer;
+}
+
+.contents {
+    text-align: center;
+}
