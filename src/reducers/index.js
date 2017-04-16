@@ -6,7 +6,7 @@ import { combineReducers } from 'redux';
 import TabsReducer from './tabs.reducer';
 
 const rootReducer = combineReducers({
-  tabs: TabsReducer
+  tabs: TabsReducer,
 });
 
 export default rootReducer;

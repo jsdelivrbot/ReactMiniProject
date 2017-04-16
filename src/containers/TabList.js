@@ -4,18 +4,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import Tab from './Tab';
+import { onClickTab } from '../actions';
+
 class TabList extends Component {
+  componentDidMount() {
+    this.props.clickFirstTab();
+  }
+
   renderList() {
-    return this.props.taps.map((tab) => {
+    return Object.keys(this.props.tabs.contents).map((key, index) => {
       return (
-        <div className="tab" key={tab.contents}>
-          <div className="tabName">
-            {tab.contents}
-          </div>
-        </div>
+        <Tab key={index} content={key} />
       );
     });
   }
+
   render() {
     return (
       <div className="tabList">
@@ -34,4 +38,12 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(TabList);
+function mapDispatchToProps(dispatch) {
+  return {
+    clickFirstTab: () => {
+      dispatch(onClickTab(1));
+    }
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TabList);
